@@ -1,0 +1,8 @@
+@page "/dashboard"
+@inject EFacture.BlazorApp.Data.InMemoryStore Store
+
+<h2>Dashboard TVA & Statuts</h2>
+<p>Factures: @Store.Invoices.Count</p>
+<p>Soumissions: @Store.Submissions.Count</p>
+<p>Acceptées: @Store.Submissions.Count(s => s.Status == "ACCEPTED")</p>
+<p>Rejetées: @Store.Submissions.Count(s => s.Status == "REJECTED")</p>
