@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  blazor-app:
+    build: ./src/EFacture.BlazorApp
+    ports:
+      - "8080:8080"
+    environment:
+      ASPNETCORE_URLS: http://+:8080

@@ -1,0 +1,21 @@
+@page "/invoices"
+@inject EFacture.BlazorApp.Data.InMemoryStore Store
+
+<h2>Factures</h2>
+
+<table>
+    <thead>
+        <tr><th>Numéro</th><th>Client</th><th>Total</th><th>Statut</th></tr>
+    </thead>
+    <tbody>
+        @foreach (var inv in Store.Invoices)
+        {
+            <tr>
+                <td>@inv.Number</td>
+                <td>@inv.CustomerName</td>
+                <td>@inv.Total TND</td>
+                <td>@inv.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
